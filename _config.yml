@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: Chalmers-Formula-Student
 minimal_mistakes_skin: dark
 
-url: conescenes.github.io
+url: conescenes.chalmersformulastudent.se
 baseurl: /
 
 # Build settings
