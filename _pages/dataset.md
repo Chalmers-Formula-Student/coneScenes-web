@@ -1,6 +1,7 @@
 ---
 permalink: /dataset
 title: "Dataset"
+excerpt: Details of the dataset.
 header:
   image: /assets/images/fsa-split-lidar.jpg
 ---

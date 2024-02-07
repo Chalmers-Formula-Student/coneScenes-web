@@ -2,6 +2,9 @@
 permalink: /
 title:  "Home"
 type: pages
+excerpt: Homepage for coneScenes.
+header:
+  image: /assets/images/fsa-split-lidar.jpg
 ---
 
 # coneScenes Dataset

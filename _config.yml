@@ -47,9 +47,6 @@ include:
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-sitemap
-  - jekyll-gist
-  - jemoji
   - jekyll-include-cache
 
 footer:
