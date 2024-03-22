@@ -22,16 +22,27 @@ The dataset is described by a `data.json` file that contains the following field
 
 - `version`: Version of the dataset. This is useful to keep track of the changes in the dataset.
 - `last_updated`: Date of the last update of the dataset. This generally means the addition of new scenes.
-- `scenes`: List of scenes in the dataset. Each scene is represented by a dictionary with the following fields:
+- `data`: List of scenes in the dataset. Each scene is represented by a dictionary with the following fields:
     - `name`: Name of the scene.
     - `team`: Name of the team that acquired the scene.
-    - `num_scans`: Number of scans in the scene.
-    - `lidar`: Name of the LiDAR model used to acquire the scene.
+    - `description`: Description of the scene.
     - `submission_date`: Date of the submission of the scene.
-    - `filename`: Path to the scene folder.
+    - `label_every`: How many past lidar scans exist for every labeled one.
+    - `lidar`: Info about LiDAR
+        - `manufacturer`: Manufacturer of the LiDAR (e.g. Velodyne, Ouster, etc.)
+        - `model`: Model of the LiDAR (e.g. VLP, OS1, etc.)
+        - `config`: Configuration of the beams of LiDAR or empty if not applicable (e.g. Gradient, Bellow Horizon, etc.)
+        - `vres`: Vertical resolution of the LiDAR (e.g. 64, 23, etc.)
+        - `hres`: Horizontal resolution of the LiDAR (e.g. 1024, 2048 etc.)
+        - `fov`: Field of view of the LiDAR (e.g. 360, 120, etc.)
+        - `frequency`: Frequency of the LiDAR (e.g. 10, 20, etc.)
+        - `location`: Location of lidar in the car (e.g. nose, mainhoop, frontwing, etc.)
+    - `num_labelled_frames`: Number of annotated scans
+    - `num_unlabelled_frames`: Number of unannotated scans (belongign to past frames of the annotated ones)
+    - `file_path`: Path to the scene folder.
     - `checksum`: Checksum of the scene zip file.
 
-This file can be found on the Github repository of the dataset.
+This file can be found on the Github repository of the dataset. **This file should not be manually overwritten. The CLI commands like "add" write to this file directly.**
 
 ## Scene Structure
 Each scene is a collection of LiDAR scans and cone annotations. A scene is usually related to a specific track, allowing the user to select scenes independently knowingly that no track will be repeated in different scenes. This is crutial to ensure there is no data leakage between training and testing.
@@ -156,11 +167,13 @@ The labels file is a TXT file that is compliant with the MMDetection3D format (s
 
 ```
 # format: [x, y, z, dx, dy, dz, yaw, category_name]
-1.23 1.42 -0.4 0.23 0.23 0.33 0.0 Cone
+1.23 1.42 -0.4 0.23 0.23 0.33 0.0 Cone_Yellow
 ...
 ```
 
-> Note: There is currently n support for multiple types of cones but this seems like it could be a nice addition. We are open to suggestions here. We believe a simple tool could be made to reannotate the data with color information pliting `Cone` into 2 classes.
+There are 4 possible labels for the cones: `Cone_Yellow`, `Cone_Blue`, `Cone_Orange` and `Cone_Big`. The `Cone_Big` label is used for the big cones that are usually placed at the start and end of the track.
+
 
 ### Unlabeled Clouds
 
+For each scan in a scene we also provide n amount of past scans. These previous scans are not annotated in themselfs but their oddometry is published so they can be used aggregated with the labeled scans. This is useful for training models that require temporal information or to build a denser cloud. The number of unlabeled clouds is not fixed and can vary from scene to scene.
