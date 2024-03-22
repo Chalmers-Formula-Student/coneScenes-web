@@ -3,3 +3,9 @@ main:
     url: /about
   - title: "Dataset"
     url: /dataset
+  - title: "Tools"
+    url: /tools
+  - title: "Synthetic Data"
+    url: /synthetic
+  - title: "GitHub"
+    url: https://github.com/Chalmers-Formula-Student/coneScenes

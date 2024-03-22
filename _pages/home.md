@@ -9,9 +9,9 @@ header:
 
 # coneScenes Dataset
 
-The coneScenes dataset is a dataset of LiDAR pointclouds with cone annotations. The dataset is designed to be used by Formula Student driverless teams.
+The coneScenes dataset is a dataset of LiDAR pointclouds with cone annotations as 3D bounding boxes. The dataset is designed to be used by Formula Student driverless teams.
 
-The data is a collaborative work. It is expected that throught continuously extending and updating the dataset, all teams will be able to use it to train and test their perception algorithms. As for future additions and improvements, this is a community effort and we encourage everyone to contribute. Bigger decisions and potential roadmap changes will be discussed in the [GitHub Discussions]()
+The data is a collaborative work. It is expected that throught continuously extending and updating the dataset, all teams will be able to use it to train and test their perception algorithms. As for future additions and improvements, this is a community effort and we encourage everyone to contribute. Bigger decisions and potential roadmap changes will be discussed in the [GitHub Discussions](https://github.com/Chalmers-Formula-Student/coneScenes/discussions)
 
 ## Contributions
 
