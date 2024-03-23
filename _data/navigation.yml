@@ -5,6 +5,8 @@ main:
     url: /dataset
   - title: "Tools"
     url: /tools
+  - title: "Guides"
+    url: /guides
   - title: "Synthetic Data"
     url: /synthetic
   - title: "GitHub"
