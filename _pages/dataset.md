@@ -12,6 +12,16 @@ The coneScenes dataset is a collection of LiDAR scans from formula student track
 
 As community driven dataset, we encourage contributions from the community in order to expand the dataset and make it more diverse with multiple LiDAR models, positions and environments.
 
+Page index:
+
+- [Dataset Structure](#dataset-structure)
+    - [data.json](#datajson)
+- [Scene Structure](#scene-structure)
+    - [metadata.json](#metadatajson)
+    - [Point Cloud File Format](#point-cloud-file-format)
+    - [Labels File Format](#labels-file-format)
+    - [Unlabeled Clouds](#unlabeled-clouds)
+
 ## Dataset Structure
 In order to facilitate structure and modularity, the dataset is structured in scenes, where each scene is a collection of LiDAR scans and cone annotations. 
 These scenes were acquired by different teams and in different tracks, which makes the dataset diverse and challenging. This structure allows for easy expansion of the dataset by adding new scenes as well as a flexible way to use the dataset for training and testing by selecting scenes that are relevant to the task at hand.
