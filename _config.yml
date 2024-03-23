@@ -16,9 +16,7 @@
 title: coneScenes Dataset
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The coneScenes dataset is a 3D LiDAR dataset for training and testing object detection algorithms in the context of the Formula Student Driverless competition.
 github_username: Chalmers-Formula-Student
 minimal_mistakes_skin: dark
 
@@ -51,15 +49,9 @@ plugins:
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/Chalmers-Formula-Student/coneScenes"
 
 defaults:
   # _pages
